@@ -1,9 +1,16 @@
-const app = require('express')();
+const app = require("express")();
 
-app.get('/', (req, res) =>
-  res.json({message: 'The dockerized frontend container is running and says "Hello World!'})
+app.get("/", (req, res) =>
+  res.json({
+    message:
+      'The dockerized frontend container is running and says "Hello World! test test test',
+  })
 );
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log('app is running on http://localhost:5000 after port forwarding from container to host'));
+app.listen(port, () =>
+  console.log(
+    "app is running on http://localhost:5000 after port forwarding from container to host"
+  )
+);
