@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend/
+    ports:
+      - "5000:8080"
+  frontend-test:
+    build: ./frontend/
+    ports:
+      - "5001:8080"
+  # core:
+  #   build: ./core/
+  #   ports:
+
+#volumes: wäre das die db?
