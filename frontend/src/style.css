@@ -1,0 +1,35 @@
+/* Reset default styles */
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background color */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Center content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style heading */
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style paragraph */
+p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
