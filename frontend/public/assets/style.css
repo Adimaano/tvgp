@@ -1,3 +1,5 @@
+/* CSS code block */
+
 /* Reset default styles */
 body,
 h1,
@@ -8,7 +10,7 @@ p {
 
 /* Set background color */
 body {
-  background-color: #0b7c9c;
+  background-color: #267d8a;
 }
 
 /* Center content */
