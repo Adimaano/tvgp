@@ -1,7 +1,14 @@
 const app = require('express')();
+const fetch = require('node-fetch');
+const coreAPI = 'http://localhost:5000/data'; // this is the exposed API from core container -> is localhost the write address?
+
+fetch(coreAPI)
+  .then(APIresp => APIresp.json())
+  .catch(err => console.log(err));
+
 
 app.get('/', (req, res) =>
-  res.json({message: 'The dockerized frontend container is running and says "Hello World!'})
+  res = APIresp// testing cross container communication
 );
 
 const port = process.env.PORT || 8080;
