@@ -1,15 +1,19 @@
 const app = require('express')();
 const fetch = require('node-fetch');
-const coreAPI = 'http://localhost:5000/data'; // this is the exposed API from core container -> is localhost the write address?
 
-fetch(coreAPI)
-  .then(APIresp => APIresp.json())
-  .catch(err => console.log(err));
+const coreAPI = 'http://core:8080/data'; // this is the exposed API from core container
 
+let dataSet;
 
-app.get('/', (req, res) =>
-  res = APIresp// testing cross container communication
-);
+async function fetchData() {
+  const response = await fetch(coreAPI);
+  await response.json().then(data => dataSet = data);
+  return response;
+}
+
+app.get('/', (req, res) => {
+  fetchData().then(() => res.send(dataSet));
+});
 
 const port = process.env.PORT || 8080;
 

@@ -3,6 +3,8 @@ from flask import Flask, jsonify
 
 print("The backend container says: Hello World!")
 
+jsonResponse = { "status": 200, "data": "This is some real Data from the backend!", "timestamp": time.time()}
+
 app = Flask(__name__)
 @app.route("/")
 def hello_world():
@@ -10,7 +12,6 @@ def hello_world():
 
 @app.route("/data")
 def get_data():
-    return jsonify( {"data": "This is some real Data from the backend!", "timestamp": time.time(), "status": "success"} )
-
+    return jsonResponse
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
