@@ -2,6 +2,7 @@
 
 import time
 import flask
+import module
 
 print("The backend container says: Hello World!")
 
@@ -32,3 +33,5 @@ def get_data():
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=8080)
+
+module.a_function()

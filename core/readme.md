@@ -8,6 +8,7 @@ Currently including:
 
 - Flask
 - Pylint
+- Pytest
 - Python 3.12
 
 
@@ -39,3 +40,11 @@ To lint your python code run:
 It should take over the preset rules of .pylintrc of this directory
 Fix all linter warnings for "clean code" and consistency.
 
+
+## Run Tests
+
+To test the python modules simply run:
+
+"pytest"
+
+from the core root directory.
