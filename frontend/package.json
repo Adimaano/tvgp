@@ -2,10 +2,10 @@
   "name": "tvgp",
   "version": "1.0.0",
   "description": "Tetris Verein Gruppen Projekt",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node script.js"
   },
   "keywords": [],
   "author": "",

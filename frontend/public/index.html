@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Check-In</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Event Check-In</h1>
+    </header>
+
+    <main>
+      <section class="event-details">
+        <h2>Upcoming Event</h2>
+        <p><strong>Event Name:</strong> Annual Tech Conference</p>
+        <p><strong>Date:</strong> September 15, 2024</p>
+        <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+        <p><strong>Location:</strong> Tech Convention Center, San Francisco</p>
+      </section>
+
+      <section class="check-in-out">
+        <h2>Will you be attending?</h2>
+        <button class="btn check-in" onclick="checkIn()">Check In</button>
+        <button class="btn check-out" onclick="checkOut()">Check Out</button>
+      </section>
+
+      <section class="status-message">
+        <p id="status"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; who even reads this lolol.</p>
+    </footer>
+
+    <script>
+      function checkIn() {
+        document.getElementById("status").innerText =
+          "LETSGOOOOOOOO WE IN HERE";
+      }
+
+      function checkOut() {
+        document.getElementById("status").innerText = "ggs next";
+      }
+    </script>
+  </body>
+</html>
