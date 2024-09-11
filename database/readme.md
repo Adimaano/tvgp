@@ -1,7 +1,31 @@
 # Database Description
 
-This will be the database
+Initial database will be the popular non-relational database MongoDB.
 
-... Not 100% sure what a database framework would look like. I only know it as a single .db file. but hey its a sandbox we'll see :)
+The MongoDB system is setup (docker container with mongoDB image) and will be run with the compose build!
 
-MongoDB?
+Current configuration is only with a local mounted volume!!
+
+Meaning: 
+Building this project will create a docker "volume" -> a metaphorical "folder" on your own PC.
+You can delete and rebuild the whole project and all its images and containers, as long as the volume is not deleted, the mongo system will reconnect to the volume with the designated name "mongodata" (see compose.yaml) and all the data you created / manipulated is SAVED and there AGAIN.
+This is called "persistance".
+
+WARNING: The volume is persistant, because you only save it locally on your PC. 
+Other Devs in the Team DO NOT have this volume. They will have their own volume created and do NOT SHARE the data stored.
+
+
+
+## How to access the database?
+
+Options:
+1. API calls (see mongodb manpages)
+2. MongoDB VScode extension
+3. MongoDB Compass (official database browser)
+
+
+## Future
+
+1. Use a service to host the data ... somewhere else? (Gino's Oracle server or Adrian's home hardware (RBPI+Disk) )
+
+2. We will be switching to Postgres + SQL some time, especially when we start using credentials.

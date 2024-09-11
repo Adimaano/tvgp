@@ -18,6 +18,17 @@ services:
       context: ./frontend/
     ports:
       - 5001:8080
+  mongo:
+    build:
+      context: ./database
+    ports:
+      - 5002:27017
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
+    driver: local
+
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
