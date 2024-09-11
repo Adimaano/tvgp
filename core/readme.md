@@ -17,7 +17,7 @@ Currently including:
 In the ./core/ directory
 create a local virtual environment with:
 
-"python -m venv .venv"
+"python -m venv venv"
 
 and go into / use the environment with:
 
