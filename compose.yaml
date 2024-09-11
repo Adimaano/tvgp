@@ -20,7 +20,7 @@ services:
       - 5001:8080
   mongo:
     build:
-      context: ./database
+      context: ./database/
     ports:
       - 5002:27017
     volumes:

@@ -19,9 +19,10 @@ Other Devs in the Team DO NOT have this volume. They will have their own volume 
 ## How to access the database?
 
 Options:
-1. API calls (see mongodb manpages)
-2. MongoDB VScode extension
-3. MongoDB Compass (official database browser)
+1. API calls (see mongodb manpages and how to access db from your code)
+2. MongoDB VScode extension (local database browser)
+3. MongoDB Compass (official database browser (desktop app))
+4. Deploy the MongoDB Express service (builds another container, which connects to MongoDB and you host your own GUI to access it)
 
 
 ## Future
