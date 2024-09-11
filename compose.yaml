@@ -25,6 +25,10 @@ services:
       - 5002:27017
     volumes:
       - mongodata:/data/db
+    entrypoint: bash -c "docker-entrypoint.sh mongod | jq --unbuffered -r '.msg'" 
+# ^ This command is only so mongodb does not spit out disgusting output messages on our docker output. Try it without if you want to see.
+# "Entrypoint" allows me to access the "terminal" of insde this container and run commands. 
+
 volumes:
   mongodata:
     driver: local
