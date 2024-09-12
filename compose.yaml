@@ -17,9 +17,6 @@ services:
       - ${HOSTPORT_MONGO}:27017
     volumes:
       - mongodata:/data/db
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${INIT_ADMIN}
-      - MONGO_INITDB_ROOT_PASSWORD=${INIT_PASS}
 # ^ This command is only so mongodb does not spit out disgusting output messages on our docker output. Try it without if you want to see.
 # "Entrypoint" allows me to access the "terminal" of insde this container and run commands. 
 
