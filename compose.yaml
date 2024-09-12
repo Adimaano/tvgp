@@ -1,68 +1,28 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
-
-# Here the instructions define your application as a service called "server".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
 services:
   core:
     build:
       context: ./core/
     ports:
-      - 5000:8080
+      - ${HOSTPORT_CORE}:8080
   frontend:
     build:
       context: ./frontend/
     ports:
-      - 5001:8080
+      - ${HOSTPORT_FRONTEND}:8080
   mongo:
     build:
       context: ./database/
+    command: bash -c "mongod | jq --unbuffered -r '.msg'" 
     ports:
-      - 5002:27017
+      - ${HOSTPORT_MONGO}:27017
     volumes:
       - mongodata:/data/db
-    entrypoint: bash -c "docker-entrypoint.sh mongod | jq --unbuffered -r '.msg'" 
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${INIT_ADMIN}
+      - MONGO_INITDB_ROOT_PASSWORD=${INIT_PASS}
 # ^ This command is only so mongodb does not spit out disgusting output messages on our docker output. Try it without if you want to see.
 # "Entrypoint" allows me to access the "terminal" of insde this container and run commands. 
 
 volumes:
   mongodata:
     driver: local
-
-# The commented out section below is an example of how to define a PostgreSQL
-# database that your application can use. `depends_on` tells Docker Compose to
-# start the database before your application. The `db-data` volume persists the
-# database data between container restarts. The `db-password` secret is used
-# to set the database password. You must create `db/password.txt` and add
-# a password of your choosing to it before running `docker compose up`.
-#     depends_on:
-#       db:
-#         condition: service_healthy
-#   db:
-#     image: postgres
-#     restart: always
-#     user: postgres
-#     secrets:
-#       - db-password
-#     volumes:
-#       - db-data:/var/lib/postgresql/data
-#     environment:
-#       - POSTGRES_DB=example
-#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#     expose:
-#       - 5432
-#     healthcheck:
-#       test: [ "CMD", "pg_isready" ]
-#       interval: 10s
-#       timeout: 5s
-#       retries: 5
-# volumes:
-#   db-data:
-# secrets:
-#   db-password:
-#     file: db/password.txt
-
