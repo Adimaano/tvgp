@@ -3,7 +3,7 @@ It should contain a description of the file and its purpose"""
 
 import time
 import flask
-import module
+from src import module
 
 print("The backend container says: Hello World!")
 
