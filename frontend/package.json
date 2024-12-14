@@ -2,7 +2,7 @@
   "name": "tvgp",
   "version": "1.0.0",
   "description": "Tetris Verein Gruppen Projekt",
-  "main": "script.js",
+  "main": "script.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node script.ts"
