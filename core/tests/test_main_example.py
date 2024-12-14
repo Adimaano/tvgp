@@ -1,9 +1,10 @@
 """Testing examples for pytest."""
 
-sys.path.append("src")
-import module
 import sys
+import module
 import pytest
+
+sys.path.append("src")
 
 # Your python interpreter wont find the *module*s. because python + pytest are being weird.
 # Those will be yellow underlined. This is a known issue with pytest and python.
