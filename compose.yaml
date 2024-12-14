@@ -3,22 +3,22 @@ services:
     build:
       context: ./core/
     ports:
-      - ${HOSTPORT_CORE}:8080
+      - 5000:8080
   frontend:
     build:
       context: ./frontend/
     ports:
-      - ${HOSTPORT_FRONTEND}:8080
+      - 8080:8080
   mongo:
     build:
       context: ./database/
-    command: bash -c "mongod | jq --unbuffered -r '.msg'" 
+    command: bash -c "mongod | jq --unbuffered -r '.msg'"
     ports:
-      - ${HOSTPORT_MONGO}:27017
+      - 27017:27017
     volumes:
       - mongodata:/data/db
 # ^ This command is only so mongodb does not spit out disgusting output messages on our docker output. Try it without if you want to see.
-# "Entrypoint" allows me to access the "terminal" of insde this container and run commands. 
+# "Entrypoint" allows me to access the "terminal" of insde this container and run commands.
 
 volumes:
   mongodata:
