@@ -1,14 +1,7 @@
 """Testing examples for pytest."""
 
-import sys
-import module
+from src import module
 import pytest
-
-sys.path.append("src")
-
-# Your python interpreter wont find the *module*s. because python + pytest are being weird.
-# Those will be yellow underlined. This is a known issue with pytest and python.
-# Below lines fixes the sys.path issue in runtime by adding our /src folder to find more modules.
 
 
 def test_pass():
