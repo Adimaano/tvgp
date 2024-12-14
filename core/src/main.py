@@ -1,8 +1,9 @@
-"""This is a docstring as an example for the main.py file of the core module. It should contain a description of the file and its purpose"""
+"""This is a docstring as an example for the main.py file of the core module. 
+It should contain a description of the file and its purpose"""
 
 import time
 import flask
-import module
+from src import module
 
 print("The backend container says: Hello World!")
 
@@ -12,9 +13,10 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    """This is the main route of the application. It should not be used for any other purpose than testing the server"""
+    """This is the main route of the application.
+    It should not be used for any other purpose than testing the server"""
 
-    return "Hello, World! This is the core Server of the application. There usually should not be a GUI but only functional calls for data"
+    return "Hello, World! This is the core Server of the application. No GUI here."
 
 
 @app.route("/data")
