@@ -1,22 +1,25 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const nodefetch = require('node-fetch');
 
 const coreAPI = 'http://core:8080/data'; // this is the exposed API from core container
 
-let dataSet: any;
 
+app.use (express.json())
 
-app.get('/', (req: any, res: any) => {
-  nodefetch(coreAPI)
-  .then( () =>  {
-    res.status(200)
-    res.write('Hello from the landing page')
-    res.end(dataSet)
+app.get('/', (req: any, res: any) => { 
+  const response = nodefetch(coreAPI)
+  .then ((response: any) => response.json())
+  .then((data: any) => {
+    res.status(200);
+    res.send(data);
+    // this is a pure json and output as such as well. automatic Content Type : application/json, because data is a json object
+    // set content type accordingly for text, html, etc
   })
   .catch( () => {
-    res.status(500)
-    res.write('Error fetching data')
-    res.end(dataSet)
+    res.status(500);
+    res.writeContinue('Error fetching data');
+    res.end();
   });
 });
 
