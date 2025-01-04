@@ -45,30 +45,35 @@ And this as "Umbrella" repository that uses each service as sub-module.
 So we get to know each tool currently used in the industry and all possible development environments.
 
 To experiment further it shall be possible to dynamically / in runtime switch from one framework to another.
-Meaning we are aiming for a "dynamic stack" so to say.
+Meaning we are aiming for a "dynamic stack".
 It will help us experience most possible environments with their advantages / disadvantages.
-Additionally, other functionalities can be introduced. Expedite some into services with their own framework, language, tooling etc.
+It is also hard proof that "yes, I am able to develop in all those."
 
 frontend frameworks
 
-VueJS
-ReactJS + NextJS (WIP)
-AngularJS
-Svelte
+- VueJS
+- ReactJS + NextJS (WIP)
+- AngularJS
+- Svelte
 
 backend frameworks
 
-Flask (WIP)
-Django
-FastAPI
-NodeJS + ExpressJS + NestJS
+- Flask (WIP)
+- Django
+- FastAPI
+- Spring Boot
+- Kotlin
+- NodeJS + ExpressJS + NestJS
 
 databases
 
-MongoDB (WIP)
-Postgres
+- MongoDB (WIP)
+- Postgres
 
 ### Other ToDos
+
+Additionally, other functionalities can be introduced.
+Also expedite some into services with their own framework, language, tooling etc.
 
 - C++ Service to know CMake
 - Coolify for online hosting
