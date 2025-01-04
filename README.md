@@ -3,8 +3,6 @@
 Authors:
 
 - Adrian Dimaano
-- John Naluz
-- Clark Rabanillo
 
 This project serves as a hyper experimental sandbox to learn technical ins and outs of software engineering.
 
@@ -21,15 +19,19 @@ Some meta goals:
 - Practicing collaborative development, coding, testing, intergration and troubleshooting.
 - Experimenting with and on different stacks
 
-
-## Build and Run the project
+## (Re-)Build and Run the project
 
 To run a local docker "cluster" and spin up the whole TVGP app with all its web services, just run:
 
 "docker compose up --build"
-
 from root (thats the highest level directory of the repository)
 
+you may also run:
+"docker compose up (--build) -d"
+if you docker to run in the background (not see all the docker output)
+
+Ctrl+C will have you exit Docker and
+"docker compose down" will stop all containers and shutdown the application.
 
 ## Notes
 

@@ -2,11 +2,11 @@ ARG NODE_VERSION=14.15.4-alpine
 
 FROM node:${NODE_VERSION}
 
-WORKDIR /app
+WORKDIR /frontend
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --production
 
 COPY . .
 

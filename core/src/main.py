@@ -3,7 +3,7 @@ It should contain a description of the file and its purpose"""
 
 import time
 import flask
-from src import module
+import module
 
 print("The backend container says: Hello World!")
 
@@ -25,7 +25,7 @@ def get_data():
 
     json_response = {
         "status": 200,
-        "data": "This is some real Data from the backend!",
+        "data": "This is some real Data from the backend! Hopefully showing on the frontend!",
         "timestamp": time.time(),
     }
 

@@ -2,10 +2,12 @@
   "name": "tvgp",
   "version": "1.0.0",
   "description": "Tetris Verein Gruppen Projekt",
-  "main": "script.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node script.ts"
+    "start": "node dist/index.js",
+    "dev": "nodemon pages/landing/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +20,9 @@
     "express": "^4.19.2",
     "node-fetch": "^2.7.0",
     "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   }
 }
