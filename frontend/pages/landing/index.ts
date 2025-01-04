@@ -1,16 +1,16 @@
 const app = require('express')();
 const nodefetch = require('node-fetch');
 
-const coreAPI = 'http://core:8080/data'; // this is the exposed API from core container
+const coreAPI = 'http://core:5000/data'; // this is the exposed API from core container
 
 let dataSet: any;
 
 
 app.get('/', (req: any, res: any) => {
-  dataSet = "Wrapper for core API";
-  res.status(200);
+  const response = nodefetch(coreAPI);
+
   res.write('Hello from landing page!\n');
-  res.end(dataSet);
+  res.end("response.text()");
   // fetchData()
   //   .then( () =>
   //     res.send(dataSet)

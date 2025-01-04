@@ -6,7 +6,7 @@ WORKDIR /frontend
 
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm install --production -g
 
 COPY . .
 
