@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.19.2",
-    "g": "^2.0.1",
-    "typescript": "^5.7.2"
-  }
-}
