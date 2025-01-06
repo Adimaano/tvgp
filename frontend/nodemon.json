@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": [],
+  "watch": ["pages/**/*.ts"],
+  "execMap": {
+    "ts" : "node --nolazy -r ts-node/register"
+  }
+}

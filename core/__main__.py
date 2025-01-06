@@ -5,9 +5,6 @@ import time
 import flask
 from src import module
 
-print("The backend container says: Hello World!")
-
-
 app = flask.Flask(__name__)
 
 
@@ -25,7 +22,7 @@ def get_data():
 
     json_response = {
         "status": 200,
-        "data": "This is some real Data from the backend!",
+        "data": "This is some real Data from the backend! Hopefully showing on the frontend!",
         "timestamp": time.time(),
     }
 
@@ -33,7 +30,8 @@ def get_data():
 
 
 if __name__ == "__main__":
+    print("The backend container says: Hello World!")
 
     app.run(host="0.0.0.0", port=8080)
 
-module.a_function()
+    module.a_function()
