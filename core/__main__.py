@@ -3,10 +3,7 @@ It should contain a description of the file and its purpose"""
 
 import time
 import flask
-import module
-
-print("The backend container says: Hello World!")
-
+from src import module
 
 app = flask.Flask(__name__)
 
@@ -33,7 +30,8 @@ def get_data():
 
 
 if __name__ == "__main__":
+    print("The backend container says: Hello World!")
 
     app.run(host="0.0.0.0", port=8080)
 
-module.a_function()
+    module.a_function()

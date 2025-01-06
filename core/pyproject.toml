@@ -1,0 +1,5 @@
+[project]
+name = "core"
+version = "0.1.0"
+description = "Backend python service for TVGP"
+authors = ["Adrian Dimaano <adrian.dimaano@hotmail.com"]

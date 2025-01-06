@@ -19,7 +19,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /core
 
 # Copy the source code into the container.
-COPY . .
+COPY . /core
 
 RUN python -m pip install -r requirements.txt
 
@@ -27,4 +27,4 @@ RUN python -m pip install -r requirements.txt
 EXPOSE 5000
 
 # Run the application.
-CMD python src/main.py
+CMD python .
