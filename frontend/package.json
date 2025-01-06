@@ -1,28 +1,29 @@
 {
-  "name": "tvgp",
-  "version": "1.0.0",
-  "description": "Tetris Verein Gruppen Projekt",
-  "main": "dist/index.js",
+  "name": "frontend-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon pages/landing/index.ts",
-    "build": "rm -rf ./dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.2",
-    "express": "^4.19.2",
-    "node-fetch": "^2.7.0",
-    "typescript": "^5.7.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9",
-    "ts-node": "^10.9.2"
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
   }
 }

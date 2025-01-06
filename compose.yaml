@@ -7,6 +7,10 @@ services:
   frontend:
     build:
       context: ./frontend/
+    depends_on:
+      core:
+        condition: service_started
+        restart: true
     ports:
       - 8080:8080
   mongo:

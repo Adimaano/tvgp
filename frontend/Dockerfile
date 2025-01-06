@@ -1,17 +1,16 @@
-ARG NODE_VERSION=14.15.4-alpine
 
-FROM node:${NODE_VERSION}
+FROM node:latest
 
 WORKDIR /frontend
 
-COPY package*.json ./
-
-RUN npm install --production -g
-
 COPY . .
+
+RUN rm -rf node_modules && rm -rf package-lock.json
+
+RUN npm install
 
 ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]

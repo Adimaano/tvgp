@@ -3,9 +3,13 @@ It should contain a description of the file and its purpose"""
 
 import time
 import flask
+from flask import jsonify
+from flask_cors import CORS
+from flask_cors import cross_origin
 from src import module
 
 app = flask.Flask(__name__)
+CORS(app)
 
 
 @app.route("/")
@@ -17,16 +21,17 @@ def hello_world():
 
 
 @app.route("/data")
+@cross_origin()
 def get_data():
     """This is a route that returns some data from the backend"""
 
     json_response = {
         "status": 200,
-        "data": "This is some real Data from the backend! Hopefully showing on the frontend!",
+        "text": "This is some real Data from the backend! Hopefully showing on the frontend!",
         "timestamp": time.time(),
     }
 
-    return json_response
+    return jsonify(json_response)
 
 
 if __name__ == "__main__":
