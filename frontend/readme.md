@@ -1,4 +1,13 @@
-# Compilation / Building
+# Frontend Description
+
+This is the frontend service, which generates the UI/UX of or Web Application.
+The stack for it is:
+
+- TypeScript
+- ReactJS
+- ESLint
+
+## Compilation / Building
 
 We are running Typescript, with npm as package manager as frontend
 Everything is written as \*.ts
@@ -9,7 +18,7 @@ and compiled by running
 From directory location: tvgp/frontend/.
 "tsc" is our "compiling" tool which that translates any typescript file into javascript. Output files are all in "./dist"
 
-# Development
+## Development
 
 As you know to run your resulting javascript and thereby Webpage you really just need to run:
 "node [path-to-target-js-file]"

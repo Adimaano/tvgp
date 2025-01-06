@@ -2,11 +2,12 @@
   "name": "tvgp",
   "version": "1.0.0",
   "description": "Tetris Verein Gruppen Projekt",
-  "main": "dist/index.js",
+  "main": "dist/index.jsx",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon pages/landing/index.ts",
+    "start": "npm run build && node dist/index.jsx",
+    "dev": "nodemon src/pages/landing/index.tsx",
     "build": "rm -rf ./dist && tsc",
+    "lint": "eslint . --ext .ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,13 +16,16 @@
   "dependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
     "express": "^4.19.2",
     "node-fetch": "^2.7.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "eslint": "^9.17.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2"
   }
