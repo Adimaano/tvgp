@@ -1,54 +1,50 @@
-# Frontend Description
+# React + TypeScript + Vite
 
-This is the frontend service, which generates the UI/UX of or Web Application.
-The stack for it is:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- TypeScript
-- ReactJS
-- ESLint
+Currently, two official plugins are available:
 
-## Compilation / Building
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-We are running Typescript, with npm as package manager as frontend
-Everything is written as \*.ts
+## Expanding the ESLint configuration
 
-and compiled by running
-"tsc"
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-From directory location: tvgp/frontend/.
-"tsc" is our "compiling" tool which that translates any typescript file into javascript. Output files are all in "./dist"
+- Configure the top-level `parserOptions` property like this:
 
-## Development
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-As you know to run your resulting javascript and thereby Webpage you really just need to run:
-"node [path-to-target-js-file]"
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-For better development, all important and required commands (= scripts) to run the frontend are defined in "package.json".
-This is includes:
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-"npm run start"
-
-- This will run the compiled main javascript. In our case the target landing page.
-
-"npm run build"
-
-- As we work in typescript, this will compile all typescript artifacts of the frontend project and build all necessary artifacts. Output into ./dist
-
-"npm run dev"
-
-- This will start the web application with hot reload functionality. Meaning, you can edit the typescript files and the webpage (in the browser) updates the changes live.
-
-"npm run test"
-
-- This will run autoamted tests. WIP no tests created yet.
-
-## Notes
-
-ToDo:
-
-Utilize the javascript Async / Await functionality
-
-Use the response manipulation knowledge about serving order
-Those are the methods to dynamically serve backend data without refreshing the page
-meticulously write the response (header - body - end) and also make sure to explicitly name next request / response to be handled
-so that the call is ran in the correct order and can be dynamically updated.
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

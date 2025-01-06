@@ -6,7 +6,7 @@ WORKDIR /frontend
 
 COPY package*.json ./
 
-RUN npm install --production -g
+RUN npm install -g
 
 COPY . .
 
@@ -14,4 +14,4 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
