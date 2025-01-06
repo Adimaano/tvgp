@@ -1,7 +1,7 @@
 import './Message.css'
 import { useEffect, useState } from 'react';
 
-const coreAPI = 'http://core:8080/data';
+const coreAPI = 'http://localhost:5000/data';
 
 function Message() {
     const [message, setMessage] = useState<string>('Empty');
