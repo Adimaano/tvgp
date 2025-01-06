@@ -1,13 +1,13 @@
 
-FROM node:22-alpine
+FROM node:latest
 
 WORKDIR /frontend
 
-COPY package*.json ./
-
-RUN npm install -g
-
 COPY . .
+
+RUN rm -rf node_modules && rm -rf package-lock.json
+
+RUN npm install
 
 ENV PORT=8080
 
