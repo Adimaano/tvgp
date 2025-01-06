@@ -13,6 +13,9 @@ function Message() {
           .catch((error) => console.error('Error fetching user:', error));
     }, []);
 
+    // try some await / async stuff. its just fancy .then and .catches in the background anyway.
+    // useEffect(async () => {
+
     return <div>Message fetched is: "{message}"</div>;
 }
 
