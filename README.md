@@ -76,9 +76,21 @@ Additionally, other functionalities can be introduced.
 Also expedite some into services with their own framework, language, tooling etc.
 
 - C++ Service to know CMake
-- Coolify for online hosting
+- Coolify for online hosting --> Hosted it raw without a server. Used Caddy for reverse proxy. Running on Oracle Server.
 - Python container with LLM / AI model
 - Learn to use Poetry
 - Sentry implementation for Monitoring and Error handling
 - Use a global linter maybe super linter
 - Expedite the automated integration into a Jenkins service
+
+## Online ToDos:
+
+Networking / Ports:
+
+Harden OpenSSH
+Setup Authentification
+Setup HTTPS connection with Caddy
+Setup Firewall
+
+Maybe use traefik image for reverse proxy and load balancing, and include that in docker / repo?
+Maybe use watchtower image for automated git pull / updates?
